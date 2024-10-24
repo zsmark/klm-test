@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="insert_airport_values" author="mzsido">
+        <insert tableName="airport">
+            <column name="iata_code" value="LHR"/>
+            <column name="display_name" value="Heathrow Airport"/>
+        </insert>
+        <insert tableName="airport">
+            <column name="iata_code" value="AMS"/>
+            <column name="display_name" value="Amsterdam Airport Schiphol"/>
+        </insert>
+        <insert tableName="airport">
+            <column name="iata_code" value="GVA"/>
+            <column name="display_name" value="Geneva Airport"/>
+        </insert>
+        <insert tableName="airport">
+            <column name="iata_code" value="JFK"/>
+            <column name="display_name" value="John F. Kennedy International Airport"/>
+        </insert>
+        <insert tableName="airport">
+            <column name="iata_code" value="ATL"/>
+            <column name="display_name" value="Hartsfield–Jackson Atlanta International Airport"/>
+        </insert>
+        <insert tableName="airport">
+            <column name="iata_code" value="AAL"/>
+            <column name="display_name" value="Aalborg Airport"/>
+        </insert>
+        <insert tableName="airport">
+            <column name="iata_code" value="CDG"/>
+            <column name="display_name" value="Paris Charles de Gaulle Airport"/>
+        </insert>
+        <insert tableName="airport">
+            <column name="iata_code" value="SFO"/>
+            <column name="display_name" value="San Francisco International Airport"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

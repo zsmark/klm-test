@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_flight_seq" author="mzsido">
+        <createSequence sequenceName="flight_id_seq" incrementBy="1" startValue="0"/>
+    </changeSet>
+    <changeSet id="create_flight_table" author="mzsido">
+        <createTable tableName="flight">
+            <column name="id" defaultValueSequenceNext="flight_id_seq" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="arrival_airport_id" type="varchar2(3)">
+                <constraints foreignKeyName="fk_arrival_id" referencedColumnNames="iata_code" referencedTableName="airport" nullable="false"/>
+            </column>
+            <column name="departure_airport_id" type="varchar2(3)">
+                <constraints foreignKeyName="fk_departure_id" referencedColumnNames="iata_code" referencedTableName="airport" nullable="false"/>
+            </column>
+            <column name="booking_id" type="bigint">
+                <constraints foreignKeyName="fk_booking_id" referencedColumnNames="id" referencedTableName="booking" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
