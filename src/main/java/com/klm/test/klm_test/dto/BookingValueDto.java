@@ -20,8 +20,4 @@ public interface BookingValueDto {
                 .distinct()
                 .collect(Collectors.joining("-"));
     }
-
-    interface AirportCode {
-        String getIataCode();
-    }
 }
